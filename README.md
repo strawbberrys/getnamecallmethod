@@ -31,11 +31,11 @@ end)()
 
 local function getNamecallMethod(): string
 	local success, errorMessage = pcall(firstNamecallHandler)
-	local namecallMethod = if type(errorMessage) == "string" then errorMessage:match("^(%w+) is not a valid member of OverlapParams$") else nil
+	local namecallMethod = if type(errorMessage) == "string" then errorMessage:match("^(.+) is not a valid member of OverlapParams$") else nil
 
 	if success or not namecallMethod then
 		local success, errorMessage = pcall(secondNamecallHandler)
-		local namecallMethod = if type(errorMessage) == "string" then errorMessage:match("^(%w+) is not a valid member of Color3$") else nil
+		local namecallMethod = if type(errorMessage) == "string" then errorMessage:match("^(.+) is not a valid member of Color3$") else nil
 
 		assert(not success)
 		assert(namecallMethod)
