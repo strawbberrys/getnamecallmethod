@@ -1,6 +1,6 @@
 {
-	"name": "getnamecallmethod",
+	"name": "getNamecallMethod",
 	"tree": {
-		"$path": "src"
+	  	"$path": "src"
 	}
 }
