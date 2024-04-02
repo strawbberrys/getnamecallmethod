@@ -1,0 +1,9 @@
+# This file lists tools managed by Aftman, a cross-platform toolchain manager.
+# For more information, see https://github.com/LPGhatguy/aftman
+
+# To add a new tool, add an entry to this table.
+[tools]
+selene = "Kampfkarren/selene@0.26.1"
+StyLua = "JohnnyMorganz/StyLua@0.20.0"
+rojo = "rojo-rbx/rojo@7.4.1"
+# rojo = "rojo-rbx/rojo@6.2.0"
