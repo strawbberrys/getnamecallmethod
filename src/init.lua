@@ -6,7 +6,7 @@ local firstNamecallHandler = namecallHandlers.firstNamecallHandler
 local secondNamecallHandler = namecallHandlers.secondNamecallHandler
 
 local function matchNamecallMethodFromError(errorMessage: string): string?
-	return errorMessage:match("^(.+) is not a valid member of %w+$")
+	return string.match(errorMessage, "^(.+) is not a valid member of %w+$")
 end
 
 local function getNamecallMethod(): string
