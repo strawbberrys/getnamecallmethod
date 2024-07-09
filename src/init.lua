@@ -10,12 +10,12 @@ local function matchNamecallMethodFromError(errorMessage: string): string?
 end
 
 local function getNamecallMethod(): string
-	local _, errorMessage = pcall(firstNamecallHandler)
-	local namecallMethod = if type(errorMessage) == "string" then matchNamecallMethodFromError(errorMessage) else nil
+	local ok, errorMessage = pcall(firstNamecallHandler)
+	local namecallMethod = if not ok then matchNamecallMethodFromError(errorMessage) else nil
 
 	if not namecallMethod then
-		_, errorMessage = pcall(secondNamecallHandler)
-		namecallMethod = if type(errorMessage) == "string" then matchNamecallMethodFromError(errorMessage) else nil
+		ok, errorMessage = pcall(secondNamecallHandler)
+		namecallMethod = if not ok then matchNamecallMethodFromError(errorMessage) else nil
 	end
 
 	assert(namecallMethod, `Could not find the namecall method in error message: '{errorMessage}'`)
