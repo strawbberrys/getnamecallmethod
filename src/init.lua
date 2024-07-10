@@ -18,9 +18,7 @@ local function getNamecallMethod(): string
 		namecallMethod = if not ok then matchNamecallMethodFromError(errorMessage) else nil
 	end
 
-	assert(namecallMethod, `Could not find the namecall method in error message: '{errorMessage}'`)
-
-	return namecallMethod
+	return namecallMethod or ""
 end
 
 return getNamecallMethod
